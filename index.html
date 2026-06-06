@@ -425,12 +425,27 @@ footer{background:var(--green);color:rgba(255,255,255,.7);padding:54px 0 30px;te
   body{padding-bottom:72px}
   .about-badge{width:104px;height:104px}
   .about-badge .num{font-size:2rem}
-  .hero-content{padding-top:100px}
   .stat{min-width:calc(50% - 7px)}
+
+  /* hero: top-align so content never clips under the header, tighten rhythm */
+  .hero{align-items:flex-start}
+  .hero-content{padding:104px 0 104px}
+  .hero .eyebrow{margin-bottom:14px;font-size:.66rem;letter-spacing:.24em}
+  .hero h1{font-size:clamp(3rem,15vw,4.4rem);margin-bottom:8px}
+  .hero-tag{font-size:1.12rem;margin-bottom:22px;max-width:none}
+  .hero-badge{margin-bottom:24px;font-size:.64rem;letter-spacing:.07em;padding:9px 14px}
+  .hero-cta{gap:12px;width:100%}
+  .hero-cta .btn{width:100%}
+  .scroll-hint{bottom:18px}
 }
 @media(max-width:420px){
-  .hero-cta{flex-direction:column;width:100%}
-  .hero-cta .btn{width:100%}
+  .hero h1{font-size:clamp(2.7rem,13vw,3.4rem)}
+  .hero-tag{font-size:1.05rem}
+}
+/* short viewports: drop the scroll cue so it can't crowd the buttons */
+@media(max-height:720px){
+  .scroll-hint{display:none}
+  .hero-content{padding-bottom:64px}
 }
 
 @media(prefers-reduced-motion:reduce){
