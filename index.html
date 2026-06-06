@@ -265,15 +265,24 @@ header:not(.scrolled) .burger span{background:#fff}
   position:absolute;border-radius:var(--r);box-shadow:var(--shadow-md);overflow:hidden;
   background-size:cover;background-position:center;
 }
+.about-img::after{
+  content:'';position:absolute;inset:0;border-radius:var(--r);
+}
 .about-img.main{
   inset:0 30% 22% 0;
-  background-image:linear-gradient(135deg,#4a5c4a,#2c3a2e),url('images/interior.jpg');
-  background-blend-mode:overlay;
+  background-image:url('images/interior.jpg');
+  background-color:#3f5044;
+}
+.about-img.main::after{
+  background:linear-gradient(135deg,rgba(74,92,74,.45),rgba(44,58,46,.35));
 }
 .about-img.sub{
   width:54%;aspect-ratio:3/4;right:0;bottom:0;border:6px solid var(--paper);
-  background-image:linear-gradient(135deg,#8a5a30,#5a3a20),url('images/baker.jpg');
-  background-blend-mode:overlay;
+  background-image:url('images/baker.jpg');
+  background-color:#6b472a;
+}
+.about-img.sub::after{
+  background:linear-gradient(135deg,rgba(138,90,48,.35),rgba(90,58,32,.25));
 }
 .about-badge{
   position:absolute;top:-18px;left:-18px;z-index:3;
